@@ -12,4 +12,6 @@ class system-update {
 	  require => Exec['apt-get update'],
 	}
 
+	# class { 'idea::ultimate':version => '12.0.1',}
+	
 }

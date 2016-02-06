@@ -1,8 +1,8 @@
 class java {
  $install_path ="/opt/softwares"
  $user_home="/home/vagrant"
- $path=$ENV{'PATH'}
 
+ 
 	file { '/home/vagrant/archives':
 		ensure => 'directory',
 	}
@@ -38,8 +38,8 @@ class java {
 	}->
 	file_line { 'Update path to /etc/environment':
 	  path => '/etc/environment',  
-	  line => "PATH2=${path}:${install_path}/jdk1.8.0_71/bin",
-	  match   => "^PATH2.*$",
+	  line => "PATH=${path}:${install_path}/jdk1.8.0_71/bin",
+	  match   => "^PATH.*$",
 	}->
 	file_line { 'Update /etc/X11/Xwrapper.config':
 	  path => '/etc/X11/Xwrapper.config',  
